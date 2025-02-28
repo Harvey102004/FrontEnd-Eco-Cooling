@@ -1,0 +1,173 @@
+{
+  "user": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "id": 2,
+      "username": "harvey_10",
+      "password": "harvey_10"
+    }
+  ],
+
+  "products": [
+    {
+      "id": 1,
+      "jobno": "J-001",
+      "customername": "Juan Dela Cruz",
+      "brands": "Panasonic",
+      "partname": "Compressor",
+      "partno": "P-12345",
+      "warranty": "2 Years",
+      "status": "Released",
+      "dateadded": "2024-02-10",
+      "imageurl": "https://picsum.photos/350/350?random=1",
+      "remarks": "High-quality compressor with a 2-year warranty, already released."
+    },
+    {
+      "id": 2,
+      "jobno": "J-002",
+      "customername": "Maria Santos",
+      "brands": "LG",
+      "partname": "Fan Motor",
+      "partno": "L-67890",
+      "warranty": "No Warranty",
+      "status": "Pending",
+      "dateadded": "2024-01-15",
+      "imageurl": "https://picsum.photos/350/350?random=2",
+      "remarks": "Pending status with no warranty, needs further approval."
+    },
+    {
+      "id": 3,
+      "jobno": "J-003",
+      "customername": "Pedro Reyes",
+      "brands": "Carrier",
+      "partname": "Thermostat",
+      "partno": "C-24680",
+      "warranty": "1 Year",
+      "status": "Released",
+      "dateadded": "2024-02-20",
+      "imageurl": "https://picsum.photos/350/350?random=3",
+      "remarks": "Released and covered by a 1-year warranty, ensuring reliable temperature control."
+    },
+    {
+      "id": 4,
+      "jobno": "J-004",
+      "customername": "Anna Lopez",
+      "brands": "Midea",
+      "partname": "Evaporator Coil",
+      "partno": "M-13579",
+      "warranty": "No Warranty",
+      "status": "Pending",
+      "dateadded": "2024-02-05",
+      "imageurl": "https://picsum.photos/350/350?random=4",
+      "remarks": "Pending due to warranty concerns, might need verification."
+    },
+    {
+      "id": 5,
+      "jobno": "J-005",
+      "customername": "Carlos Mendoza",
+      "brands": "Whirlpool",
+      "partname": "Capacitor",
+      "partno": "W-54321",
+      "warranty": "6 Months",
+      "status": "Released",
+      "dateadded": "2024-01-30",
+      "imageurl": "https://picsum.photos/350/350?random=5",
+      "remarks": "Released with a 6-month warranty, essential for motor startup."
+    },
+    {
+      "id": 6,
+      "jobno": "J-006",
+      "customername": "Sofia Ramos",
+      "brands": "Fujidenzo",
+      "partname": "Relay",
+      "partno": "F-98765",
+      "warranty": "No Warranty",
+      "status": "Pending",
+      "dateadded": "2024-02-08",
+      "imageurl": "https://picsum.photos/350/350?random=6",
+      "remarks": "Pending relay replacement, awaiting parts availability."
+    },
+    {
+      "id": 7,
+      "jobno": "J-007",
+      "customername": "Ricardo Diaz",
+      "brands": "Camel",
+      "partname": "Blower Motor",
+      "partno": "C-11223",
+      "warranty": "3 Years",
+      "status": "Released",
+      "dateadded": "2024-02-12",
+      "imageurl": "https://picsum.photos/350/350?random=7",
+      "remarks": "Blower motor with a long 3-year warranty, already dispatched."
+    },
+    {
+      "id": 8,
+      "jobno": "J-008",
+      "customername": "Marco Herrera",
+      "brands": "Panasonic",
+      "partname": "Sensor",
+      "partno": "P-45678",
+      "warranty": "1 Year",
+      "status": "Pending",
+      "dateadded": "2024-01-18",
+      "imageurl": "https://picsum.photos/350/350?random=8",
+      "remarks": "Sensor is under review for warranty approval."
+    },
+    {
+      "id": 9,
+      "jobno": "J-009",
+      "customername": "Elena Cruz",
+      "brands": "LG",
+      "partname": "Control Board",
+      "partno": "L-78901",
+      "warranty": "No Warranty",
+      "status": "Released",
+      "dateadded": "2024-02-01",
+      "imageurl": "https://picsum.photos/350/350?random=9",
+      "remarks": "Control board released without warranty, final sale."
+    },
+    {
+      "id": 10,
+      "jobno": "J-010",
+      "customername": "Bryan Gutierrez",
+      "brands": "Carrier",
+      "partname": "Heat Exchanger",
+      "partno": "C-35791",
+      "warranty": "2 Years",
+      "status": "Pending",
+      "dateadded": "2024-01-25",
+      "imageurl": "https://picsum.photos/350/350?random=10",
+      "remarks": "Pending heat exchanger replacement, awaiting shipment."
+    },
+    {
+      "id": 11,
+      "jobno": "J-011",
+      "customername": "Daniel Ramirez",
+      "brands": "Midea",
+      "partname": "Fan Blade",
+      "partno": "M-65432",
+      "warranty": "No Warranty",
+      "status": "Released",
+      "dateadded": "2024-02-14",
+      "imageurl": "https://picsum.photos/350/350?random=11",
+      "remarks": "Fan blade released with no warranty, customer acknowledged."
+    },
+    {
+      "id": 12,
+      "jobno": "J-012",
+      "customername": "Luisa Martinez",
+      "brands": "Whirlpool",
+      "partname": "Pump Motor",
+      "partno": "W-14785",
+      "warranty": "1 Year",
+      "status": "Pending",
+      "dateadded": "2024-01-29",
+      "imageurl": "https://picsum.photos/350/350?random=12",
+      "remarks": "Pump motor pending testing before final release."
+    }
+  ]
+}
