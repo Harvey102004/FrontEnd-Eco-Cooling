@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Icons } from "../assets/icons/Icons";
+import axios from "axios";
 
 const ProductDetails = () => {
   const [productDetails, setProductDetails] = useState({});
@@ -12,17 +13,11 @@ const ProductDetails = () => {
   useEffect(() => {
     const fetchProductDetails = async () => {
       try {
-        const response = await fetch(
+        const response = await axios.get(
           `http://localhost:3001/products/${id.toString()}`,
         );
 
-        if (!response.ok) {
-          throw new Error("Error fetching data");
-        }
-
-        const data = await response.json();
-
-        setProductDetails(data);
+        setProductDetails(response.data);
       } catch (error) {}
     };
 

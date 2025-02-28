@@ -3,10 +3,66 @@ import { Icons } from "../assets/icons/Icons";
 import { useNavigate } from "react-router-dom";
 
 const AddItem = () => {
-  const [warranty, setWarranty] = useState("");
   const [hasWarranty, setHasWarranty] = useState(null);
 
   const navigate = useNavigate();
+
+  // LAGAYAN TO NG MGA VALUE SA MGA INPUT TAPOS ETO RIN GAMIT SA PAG POST SA BACK END
+
+  const [formData, setFormData] = useState({
+    imageUrl: null,
+    jobNo: "",
+    customerName: "",
+    brandValue: "",
+    partName: "",
+    partNumber: "",
+    warranty: "",
+    status: "",
+    dateValue: "",
+    remarks: "",
+  });
+
+  // FUNCTION TO SA PAG CHANGE NG VALUE SA MGA INPUT SA FORM
+
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+
+    setFormData((prevData) => ({
+      ...prevData,
+      [id]: value,
+    }));
+  };
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+
+    if (file) {
+      setFormData((prevData) => ({
+        ...prevData,
+        imageUrl: file,
+      }));
+    }
+  };
+
+  // ETO YUNG PAG SEND NG DATA SA BACK END
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // ETO YUNG PAG FETCH PARA MA ADD YUNG ITEM SO YUNG LINK PAPALTAN YON NG API SA BACK END
+
+    // fetch("https://your-api.com/add-item", {
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/json" },
+    //   body: JSON.stringify(formData),
+    // })
+    //   .then((response) => response.json())
+    //   .then((data) => {
+    //     console.log("Success:", data);
+    //     navigate("/products"); // Redirect sa products page
+    //   })
+    //   .catch((error) => console.error("Error:", error));
+  };
 
   // VALUE  TO NG BRANDS
 
@@ -36,18 +92,19 @@ const AddItem = () => {
 
         {/* ------------- FORM NG ADD ITEM ------------- */}
 
-        <form action="" className="flex flex-col gap-8">
+        <form onSubmit={handleSubmit} className="flex flex-col gap-8">
           <div className="flex gap-8">
             <div className="flex flex-col gap-4">
               {/* ------------ INPUT TO NG IMAGE ------------ */}
 
               <div className="flex w-[300px] flex-col gap-2">
-                <label htmlFor="file" className="text-xs text-nowrap">
+                <label htmlFor="imageUrl" className="text-xs text-nowrap">
                   Item image :
                 </label>
                 <input
                   type="file"
-                  id="file"
+                  id="imageUrl"
+                  onChange={handleFileChange}
                   className="bg-light text-dark rounded-md p-2 text-xs outline-0 file:mr-3 file:rounded-md file:bg-gray-300 file:px-3 file:py-1"
                 />
               </div>
@@ -55,13 +112,15 @@ const AddItem = () => {
               {/* ------------ INPUT TO NG JOB NUMBER ------------ */}
 
               <div className="flex flex-col gap-2">
-                <label htmlFor="jobno" className="text-xs text-nowrap">
+                <label htmlFor="jobNo" className="text-xs text-nowrap">
                   Job Number:
                 </label>
                 <input
                   type="text"
-                  id="jobno"
+                  id="jobNo"
                   placeholder="Job number..."
+                  value={formData.jobNo}
+                  onChange={handleChange}
                   className="bg-light text-dark file:text-light w-full rounded-md p-3 text-xs outline-0"
                 />
               </div>
@@ -69,13 +128,15 @@ const AddItem = () => {
               {/* ------------ INPUT TO NG CUSTOMER NAME ------------ */}
 
               <div className="flex flex-col gap-2">
-                <label htmlFor="cutomername" className="text-xs text-nowrap">
+                <label htmlFor="customerName" className="text-xs text-nowrap">
                   Customer Name:
                 </label>
                 <input
                   type="text"
-                  id="customername"
+                  id="customerName"
                   placeholder="Customer name..."
+                  value={formData.customerName}
+                  onChange={handleChange}
                   className="bg-light text-dark file:text-light w-full rounded-md p-3 text-xs outline-0"
                 />
               </div>
@@ -83,15 +144,17 @@ const AddItem = () => {
               {/* ------------ SELECT OPTIONS TO NG BRANDS ------------ */}
 
               <div className="relative flex flex-col gap-2">
-                <label htmlFor="brands" className="text-xs text-nowrap">
+                <label htmlFor="brandValue" className="text-xs text-nowrap">
                   Brands :
                 </label>
                 <Icons.Dropdown className="text-dark pointer-events-none absolute top-[70%] right-0 -translate-1/2" />
                 <select
                   className="bg-light text-dark w-full appearance-none rounded-md p-3 pr-10 text-xs outline-0"
-                  id="brands"
+                  id="brandValue"
+                  value={formData.brandValue}
+                  onChange={handleChange}
                 >
-                  <option value="" selected disabled>
+                  <option value="" disabled>
                     Brand
                   </option>
                   {brands.map((brand) => (
@@ -105,13 +168,15 @@ const AddItem = () => {
               {/* ------------ INPUT TO NG PART NAME ------------ */}
 
               <div className="flex flex-col gap-2">
-                <label htmlFor="partname" className="text-xs text-nowrap">
+                <label htmlFor="partName" className="text-xs text-nowrap">
                   Part Name:
                 </label>
                 <input
                   type="text"
-                  id="partname"
+                  id="partName"
                   placeholder="Part name..."
+                  value={formData.partName}
+                  onChange={handleChange}
                   className="bg-light text-dark file:text-light w-full rounded-md p-3 text-xs outline-0"
                 />
               </div>
@@ -121,13 +186,15 @@ const AddItem = () => {
               {/* ------------ INPUT TO NG PART NUMBER ------------ */}
 
               <div className="flex flex-col gap-2">
-                <label htmlFor="partnumber" className="text-xs text-nowrap">
+                <label htmlFor="partNumber" className="text-xs text-nowrap">
                   Part Number:
                 </label>
                 <input
                   type="text"
-                  id="partnumber"
+                  id="partNumber"
                   placeholder="Part number..."
+                  value={formData.partNumber}
+                  onChange={handleChange}
                   className="bg-light text-dark w-full rounded-md p-3 text-xs outline-0"
                 />
               </div>
@@ -135,7 +202,9 @@ const AddItem = () => {
               {/* ------------ INPUT TO NG WARRANTY ------------ */}
 
               <div className="flex flex-col gap-2">
-                <label className="text-xs text-nowrap">Warranty :</label>
+                <label className="text-xs text-nowrap" htmlFor="warranty">
+                  Warranty :
+                </label>
 
                 {hasWarranty === null && (
                   <div className="flex items-center gap-3">
@@ -145,18 +214,23 @@ const AddItem = () => {
                     <div className="flex gap-3">
                       <button
                         className="cursor-pointer hover:font-semibold"
-                        onClick={() => {
+                        onClick={(e) => {
+                          e.preventDefault();
                           setHasWarranty(true);
-                          setWarranty("");
+                          setFormData((prev) => ({ ...prev, warranty: "" }));
                         }}
                       >
                         Yes
                       </button>
                       <button
                         className="cursor-pointer hover:font-semibold"
-                        onClick={() => {
+                        onClick={(e) => {
+                          e.preventDefault();
                           setHasWarranty(false);
-                          setWarranty("No Warranty");
+                          setFormData((prev) => ({
+                            ...prev,
+                            warranty: "No warranty",
+                          }));
                         }}
                       >
                         No
@@ -172,8 +246,9 @@ const AddItem = () => {
                     type="text"
                     className="bg-light text-dark file:text-light w-full rounded-md p-3 text-xs outline-0"
                     placeholder="Enter warranty details..."
-                    value={warranty}
-                    onChange={(e) => setWarranty(e.target.value)}
+                    id="warranty"
+                    value={formData.warranty}
+                    onChange={handleChange}
                   />
                 )}
 
@@ -199,8 +274,10 @@ const AddItem = () => {
                 <select
                   className="bg-light text-dark w-full appearance-none rounded-md p-3 pr-10 text-xs outline-0"
                   id="status"
+                  value={formData.status}
+                  onChange={handleChange}
                 >
-                  <option value="" selected disabled>
+                  <option value="" disabled>
                     Status
                   </option>
                   <option value="released">Released</option>
@@ -211,13 +288,15 @@ const AddItem = () => {
               {/* ------------ INPUT TO NG DATE ------------ */}
 
               <div className="flex flex-col gap-2">
-                <label htmlFor="date" className="text-xs text-nowrap">
+                <label htmlFor="dateValue" className="text-xs text-nowrap">
                   Date :
                 </label>
                 <input
                   type="date"
-                  id="date"
+                  id="dateValue"
                   className="bg-light text-dark file:text-light w-full rounded-md p-3 text-xs outline-0"
+                  value={formData.dateValue}
+                  onChange={handleChange}
                 />
               </div>
 
@@ -232,6 +311,8 @@ const AddItem = () => {
                   id="remarks"
                   className="bg-light text-dark file:text-light h-30 resize-none rounded-md p-3 text-xs outline-0"
                   placeholder="Write your remarks..."
+                  value={formData.remarks}
+                  onChange={handleChange}
                 ></textarea>
               </div>
             </div>

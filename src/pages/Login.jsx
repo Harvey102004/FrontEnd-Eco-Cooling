@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Icons } from "../assets/icons/Icons";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Login = () => {
   // LAGAYAN TO NG VALUE SA USERNAME AT  PASSWORD AT DUN SA ICON NA MATA
@@ -15,16 +16,14 @@ const Login = () => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const response = await fetch("http://localhost:3001/user");
-        const data = await response.json();
-        setUsers(data);
+        const response = await axios.get("http://localhost:3001/user");
+        setUsers(response.data);
       } catch (error) {
         console.log(error);
       }
     };
 
     fetchUser();
-    console.log(users);
   }, []);
 
   const handlePassword = () => {
