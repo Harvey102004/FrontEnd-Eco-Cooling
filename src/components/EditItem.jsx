@@ -52,8 +52,10 @@ const EditItem = () => {
   return (
     <div className="bg-tagos absolute top-0 left-0 flex h-screen w-screen items-center justify-center">
       <div className="bg-dark shadow-form relative rounded-lg p-10 pb-25 text-white">
-        <h1 className="mb-6 text-center text-3xl font-bold">Edit Item</h1>
-        <p className="mb-8 text-center text-sm">
+        <h1 className="text-light mb-6 text-center text-3xl font-bold">
+          Edit Item
+        </h1>
+        <p className="text-light mb-8 text-center text-sm">
           Only status and remarks can be edited.
         </p>
         <Icons.Exit
@@ -73,7 +75,7 @@ const EditItem = () => {
                 type="text"
                 disabled
                 value={productDetail.jobno}
-                className="bg-light mt-1 w-full rounded-md p-3 text-xs text-gray-500 outline-0"
+                className="bg-light mt-1 w-full rounded-md p-3 text-xs text-gray-700 outline-0"
               />
             </div>
 
@@ -87,7 +89,7 @@ const EditItem = () => {
                 type="text"
                 disabled
                 value={productDetail.customername}
-                className="bg-light mt-1 w-full rounded-md p-3 text-xs text-gray-500 outline-0"
+                className="bg-light mt-1 w-full rounded-md p-3 text-xs text-gray-700 outline-0"
               />
             </div>
 
@@ -101,7 +103,7 @@ const EditItem = () => {
                 type="text"
                 disabled
                 value={productDetail.brands}
-                className="bg-light mt-1 w-full rounded-md p-3 text-xs text-gray-500 outline-0"
+                className="bg-light mt-1 w-full rounded-md p-3 text-xs text-gray-700 outline-0"
               />
             </div>
 
@@ -115,7 +117,7 @@ const EditItem = () => {
                 type="text"
                 disabled
                 value={productDetail.partname}
-                className="bg-light mt-1 w-full rounded-md p-3 text-xs text-gray-500 outline-0"
+                className="bg-light mt-1 w-full rounded-md p-3 text-xs text-gray-700 outline-0"
               />
             </div>
 
@@ -129,7 +131,7 @@ const EditItem = () => {
                 type="text"
                 disabled
                 value={productDetail.partno}
-                className="bg-light mt-1 w-full rounded-md p-3 text-xs text-gray-500 outline-0"
+                className="bg-light mt-1 w-full rounded-md p-3 text-xs text-gray-700 outline-0"
               />
             </div>
 
@@ -143,7 +145,7 @@ const EditItem = () => {
                 type="text"
                 disabled
                 value={productDetail.warranty}
-                className="bg-light mt-1 w-full rounded-md p-3 text-xs text-gray-500 outline-0"
+                className="bg-light mt-1 w-full rounded-md p-3 text-xs text-gray-700 outline-0"
               />
             </div>
           </div>
@@ -159,7 +161,7 @@ const EditItem = () => {
                 type="text"
                 disabled
                 value={productDetail.dateadded}
-                className="bg-light mt-1 w-full rounded-md p-3 text-xs text-gray-500 outline-0"
+                className="bg-light mt-1 w-full rounded-md p-3 text-xs text-gray-700 outline-0"
               />
             </div>
 

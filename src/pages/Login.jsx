@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Icons } from "../assets/icons/Icons";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import PopUp from "../components/PopUp";
 
 const Login = () => {
   // LAGAYAN TO NG VALUE SA USERNAME AT  PASSWORD AT DUN SA ICON NA MATA
@@ -10,6 +11,11 @@ const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [isHidden, setIsHidden] = useState(false);
+
+  // USESTATE PARA SA POPUP PAG SUCCESS AND ERROR LOGIN
+
+  const [popUpError, setPopUpError] = useState(false);
+  const [popUpSuccess, setPopUpSuccess] = useState(false);
 
   // FETCHING DON SA USER SA FAKEDB PALTAN NALANG YUNG LINK SA API NG BACK END
 
@@ -42,7 +48,18 @@ const Login = () => {
         user.username === username.trim() && user.password === password.trim(),
     );
 
-    userFound ? navigate("/dashboard") : alert("mali account mo");
+    if (userFound) {
+      setPopUpSuccess(true);
+      setTimeout(() => {
+        setPopUpSuccess(false);
+        navigate("/dashboard");
+      }, 1500);
+    } else {
+      setPopUpError(true);
+      setTimeout(() => {
+        setPopUpError(false);
+      }, 1500);
+    }
   };
 
   document.title = "Login Form";
@@ -105,6 +122,20 @@ const Login = () => {
           />
         </form>
       </div>
+
+      <PopUp
+        text={"Please enter correct username and password !"}
+        bgColor={"bg-red-500"}
+        textColor={"text-white"}
+        isTrue={popUpError}
+      />
+
+      <PopUp
+        text={"Login Successfully !"}
+        bgColor={"bg-green-700 px-7"}
+        textColor={"text-white"}
+        isTrue={popUpSuccess}
+      />
     </div>
   );
 };

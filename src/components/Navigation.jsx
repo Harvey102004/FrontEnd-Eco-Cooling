@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { Icons } from "../assets/icons/Icons";
 import Logout from "./logout";
+import PopUp from "./PopUp";
 
 const Navigation = () => {
   // USESTATE TO PARA SA ACTIVE NA NAV
@@ -11,6 +12,7 @@ const Navigation = () => {
   // USESTATE PARA SA LOGOUT
 
   const [isLogout, setIsLogout] = useState(false);
+  const [popUpLogout, setIsPopUpLogout] = useState(false);
 
   // GINAWA KO LANG ARRAY PARA IMAP KO NALANG SA <ul>
 
@@ -41,7 +43,11 @@ const Navigation = () => {
   // NAVIGATE SA LOGIN PAG NAG YES SA LOGOUT
 
   const handleYesLogout = () => {
-    navigate("/");
+    setIsPopUpLogout(true);
+    setTimeout(() => {
+      setIsPopUpLogout(false);
+      navigate("/");
+    }, 1500);
   };
 
   return (
@@ -85,6 +91,13 @@ const Navigation = () => {
       {isLogout && (
         <Logout onclickNo={handleLogout} onclickYes={handleYesLogout} />
       )}
+
+      <PopUp
+        text={"Logout Successfully !"}
+        bgColor={"bg-green-700 px-7"}
+        textColor={"text-white"}
+        isTrue={popUpLogout}
+      />
     </>
   );
 };

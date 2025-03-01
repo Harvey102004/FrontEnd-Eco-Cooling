@@ -254,7 +254,7 @@ const Product = () => {
                 sortedItems.map((item, index) => (
                   <tr
                     key={index}
-                    className="cursor-pointer border-b-2"
+                    className="trProduct cursor-pointer border-b-2"
                     onClick={() => navigate(`/products/${item.id}`)}
                   >
                     {header.map((head, index) => (

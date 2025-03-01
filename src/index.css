@@ -83,3 +83,7 @@ body {
   background-color: var(--clr-dark);
   border-radius: 20px;
 }
+
+.trProduct:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
